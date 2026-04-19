@@ -22,6 +22,16 @@ app.get('/contact',(req,res) =>{
     res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 })
 
+//
+app.get("/api/users",(req,res) =>{
+    res.json({
+        name: "Muhammad Faizan",
+        age: 30,
+        email: "muhammadfaizan4154@gmail.com"
+    })
+})
+
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
