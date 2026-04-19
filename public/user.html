@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserInfo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h3 {
+            color: #666;
+        }
+        .parent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h1>User Information</h1>
+       <h3 class="name"></h3>
+       <h3 class="age"></h3>
+       <h3 class="email"></h3>
+    </div>
+    <script>
+        fetch('api/users').then(res => res.json()).then(data =>{
+            document.querySelector('.name').textContent = data.name;
+            document.querySelector('.age').textContent = data.age;
+            document.querySelector('.email').textContent = data.email;
+        })
+    </script>
+</body>
+</html>

@@ -22,6 +22,11 @@ app.get('/contact',(req,res) =>{
     res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 })
 
+app.get('/user',(req,res) =>{
+    // res.send("This is user page");
+    res.sendFile(path.join(__dirname, 'public', 'user.html'));
+})
+
 //
 app.get("/api/users",(req,res) =>{
     res.json({
