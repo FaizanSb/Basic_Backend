@@ -7,7 +7,8 @@ const path = require('path');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    //res.send('Hello World!');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/about',(req,res) =>{
@@ -17,7 +18,8 @@ app.get('/about',(req,res) =>{
 })
 
 app.get('/contact',(req,res) =>{
-    res.send("This is contact page");
+    // res.send("This is contact page");
+    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 })
 
 app.listen(port, () => {
